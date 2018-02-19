@@ -66,39 +66,40 @@
     var Promise = window.Promise;
 
     function promiseAnimate(ball, distance) {
-        return new Promise(function (reslove, reject) {
+        return new Promise(function (resolve, reject) {
             function _animate() {
                 setTimeout(function () {
-                    var marginLeft = parseInt(ball.style.marginLeft, 10);
+                    var marginLeft = parseInt(ball.style.marginLeft, 10)
                     if (marginLeft == distance) {
-                        reslove
+                        return resolve()
                     } else {
                         if (marginLeft < distance) {
-                            marginLeft++;
+                            marginLeft++
                         } else {
-                            marginLeft--;
+                            marginLeft--
                         }
-                        ball.style.marginLeft = marginLeft + "px";
-                        _animate();
                     }
+                    ball.style.marginLeft = marginLeft + "px"
+                    _animate()
                 }, 13)
             }
-            _animate();
+
+            _animate()
         })
     }
 
     promiseAnimate(ball1, 100)
         .then(function () {
             return promiseAnimate(ball2, 200)
-        }) .then(function () {
-            return promiseAnimate(ball3, 300)
-        }) .then(function () {
-            return promiseAnimate(ball3, 150)
-        }) .then(function () {
-            return promiseAnimate(ball2, 150)
-        }) .then(function () {
-            return promiseAnimate(ball1, 150)
-        })
+        }).then(function () {
+        return promiseAnimate(ball3, 300)
+    }).then(function () {
+        return promiseAnimate(ball3, 150)
+    }).then(function () {
+        return promiseAnimate(ball2, 150)
+    }).then(function () {
+        return promiseAnimate(ball1, 150)
+    })
 
 </script>
 </body>
