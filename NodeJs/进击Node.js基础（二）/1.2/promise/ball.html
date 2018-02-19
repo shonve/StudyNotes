@@ -18,7 +18,7 @@
             background-color: yellow;
         }
 
-        .ball2 {
+        .ball3 {
             background-color: green;
         }
     </style>
@@ -33,31 +33,28 @@
     var ball2 = document.querySelector('.ball2')
     var ball3 = document.querySelector('.ball3')
 
-    function animate(ball, distance, cb) {
-        setTimeout(function () {
-            var marginLeft = parseInt(ball.style.marginLeft, 10)
-            if (marginLeft === distance) {
-                cb && cb()
+    function animate(ball, distance, callBack) {
+        setTimeout(function() {
+            var marginLeft = parseInt(window.getComputedStyle(ball, null).marginLeft, 10);
+            if (marginLeft == distance) {
+                callBack();
             } else {
                 if (marginLeft < distance) {
-                    marginLeft++
+                    marginLeft++;
                 } else {
-                    marginLeft--
+                    marginLeft--;
                 }
-                ball.style.marginLeft = marginLeft
-                animate(ball, distance, cb)
+                ball.style.marginLeft = marginLeft + "px";
+                animate(ball, distance, callBack);
             }
         }, 13)
     }
-
-    animate(ball1, 100, function () {
-        animate(ball2, 200, function () {
-            animate(ball3, 300, function () {
-                animate(ball3, 150, function () {
-                    animate(ball2, 150, function () {
-                        animate(ball1, 150, function () {
-
-                        })
+    animate(ball1, 100, function() {
+        animate(ball2, 200, function() {
+            animate(ball3, 300, function() {
+                animate(ball3, 150, function() {
+                    animate(ball2, 150, function() {
+                        animate(ball1, 150)
                     })
                 })
             })
