@@ -14,4 +14,5 @@
 [http://www.tablesgenerator.com](http://www.tablesgenerator.com)
 
 [如何使用七牛云做为图床？](https://zhuanlan.zhihu.com/p/20380531)
+[关于js中的同步和异步](https://www.cnblogs.com/c3gen/p/6170504.html)
 
