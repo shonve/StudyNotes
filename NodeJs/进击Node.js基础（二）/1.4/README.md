@@ -1,0 +1,3 @@
+HTTP协议基于IP、TCP之上
+
+HTTPS协议基于IP、TCP之上加了一层SSL/TLS
