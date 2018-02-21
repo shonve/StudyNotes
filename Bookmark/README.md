@@ -21,3 +21,9 @@
 
 [体验异步的终极解决方案-ES7的Async/Await](http://cnodejs.org/topic/5640b80d3a6aa72c5e0030b6)
 
+[Postfix Code Completion in IntelliJ IDEA 13.1 EAP](https://blog.jetbrains.com/idea/2014/03/postfix-completion/)
+
+[如何成为 IntelliJ IDEA 键盘流？](https://www.zhihu.com/question/20783392)
+
+[十大Intellij IDEA快捷键](http://blog.csdn.net/dc_726/article/details/42784275)
+
